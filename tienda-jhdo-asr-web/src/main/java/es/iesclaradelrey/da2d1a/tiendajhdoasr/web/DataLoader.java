@@ -6,9 +6,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Clase de configuración que carga datos iniciales al arrancar la aplicación.
+ * Inserta las categorías de ejemplo para que la tienda tenga contenido desde el inicio.
+ */
 @Configuration
 public class DataLoader {
 
+    /**
+     * Bean que se ejecuta automáticamente al iniciar la aplicación.
+     * Crea y guarda las categorías predefinidas usando el servicio.
+     */
     @Bean
     CommandLineRunner initData(CategoriaService categoriaService) {
         return args -> {
